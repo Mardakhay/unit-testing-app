@@ -1,66 +1,301 @@
-:root {
-  font-family: Inter, system-ui, sans-serif;
-}
-
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  background: #111827;
-  color: #f9fafb;
-}
-
-button,
-input {
-  font: inherit;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0f0f23;
+  color: #fff;
+  line-height: 1.6;
 }
 
 .app {
-  max-width: 960px;
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 32px 20px 56px;
 }
 
-.grid {
-  display: grid;
-  gap: 16px;
+.app-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.card {
-  background: #1f2937;
-  border: 1px solid #374151;
-  border-radius: 16px;
-  padding: 16px;
+.app-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
 }
 
-.row {
+.app-header p {
+  color: #a0a0b8;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.app-header code {
+  background: rgba(67, 233, 123, 0.15);
+  color: #43e97b;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+}
+
+.app-main {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-input {
-  background: #111827;
-  color: #f9fafb;
-  border: 1px solid #4b5563;
-  border-radius: 10px;
-  padding: 10px 12px;
+.demo-section {
+  background: #1a1a2e;
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
 }
 
-button {
-  background: #2563eb;
-  color: white;
-  border: 0;
-  border-radius: 10px;
+.section-badge {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  color: #0f0f23;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Greeting */
+.greeting-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.greeting-card p {
+  color: #a0a0b8;
+}
+
+.greeting-card a {
+  color: #43e97b;
+}
+
+.logout-btn {
+  margin-top: 0.75rem;
+  background: rgba(239, 83, 80, 0.2);
+  color: #ef5350;
+  border: 1px solid rgba(239, 83, 80, 0.4);
+  padding: 6px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Counter */
+.counter-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.count-display {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #a0a0b8;
+}
+
+.count-display strong {
+  color: #43e97b;
+  font-size: 2rem;
+}
+
+.counter-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.counter-buttons button {
+  padding: 8px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.counter-buttons button:hover {
+  background: rgba(67, 233, 123, 0.15);
+  border-color: #43e97b;
+}
+
+.warning-text {
+  margin-top: 0.75rem;
+  color: #ef5350;
+  font-weight: 600;
+}
+
+/* LoginForm */
+.login-form h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.form-field {
+  margin-bottom: 1rem;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #a0a0b8;
+  font-size: 0.9rem;
+}
+
+.form-field input {
+  width: 100%;
   padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-field input:focus {
+  border-color: #43e97b;
+}
+
+.form-field input::placeholder {
+  color: #555;
+}
+
+.login-form button[type='submit'] {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  border: none;
+  border-radius: 8px;
+  color: #0f0f23;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.login-form button[type='submit']:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #ef5350;
+  background: rgba(239, 83, 80, 0.1);
+  border-left: 3px solid #ef5350;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* TodoApp */
+.todo-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.todo-input-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.todo-input-row input {
+  flex: 1;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.todo-input-row input:focus {
+  border-color: #43e97b;
+}
+
+.todo-input-row input::placeholder {
+  color: #555;
+}
+
+.todo-input-row button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  border: none;
+  border-radius: 8px;
+  color: #0f0f23;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.todo-list {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.todo-list li.done span {
+  color: #555;
+}
+
+.todo-list li span {
+  flex: 1;
+}
+
+.todo-list li input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: #43e97b;
   cursor: pointer;
 }
 
-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+.delete-btn {
+  background: rgba(239, 83, 80, 0.15);
+  color: #ef5350;
+  border: 1px solid rgba(239, 83, 80, 0.3);
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.todo-count {
+  color: #a0a0b8;
+  font-size: 0.9rem;
 }
