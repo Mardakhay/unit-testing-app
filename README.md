@@ -1,6 +1,6 @@
 # Unit Testing App
 
-A React + TypeScript application built with Vite for practicing unit testing using modern tools like Vitest and Testing Library.
+A React + TypeScript application built with Vite for practicing unit testing using modern tools.
 
 ## Tech Stack
 
